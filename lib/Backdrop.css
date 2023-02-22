@@ -1,0 +1,13 @@
+body {
+	overflow-x: hidden;
+}
+
+.coverpage_navigator {
+	text-decoration: none;
+	width: min-content;
+}
+
+.coverpage_navigator:link { text-decoration: none; }
+.coverpage_navigator:visited { text-decoration: none; }
+.coverpage_navigator:hover { text-decoration: none; }
+.coverpage_navigator:active { text-decoration: none; }

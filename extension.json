@@ -1,0 +1,42 @@
+{
+	"name": "Backdrop",
+	"version": "1.0.0",
+	"author": [
+		"Sanjay Thiyagarajan"
+	],
+	"url": "",
+	"descriptionmsg": "backdrop-desc",
+	"type": "parserhook",
+	"load_composer_autoloader": true,
+	"MessagesDirs": {
+		"Backdrop": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"BackdropMagic": "Backdrop.i18n.magic.php"
+	},
+	"AutoloadClasses": {
+		"BackdropHooks": "src/BackdropHooks.php",
+		"BackdropParser": "src/BackdropParser.php"
+	},
+	"ResourceModules": {
+		"ext.Backdrop": {
+			"scripts": "lib/Backdrop.js",
+			"styles": [
+				"lib/Backdrop.css"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "Backdrop"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "BackdropHooks::registerParserFunctions"
+	},
+	"requires": {
+		"MediaWiki": ">= 1.35.0"
+	},
+	"manifest_version": 1
+}
