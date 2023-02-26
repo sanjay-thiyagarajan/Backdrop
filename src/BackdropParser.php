@@ -65,6 +65,8 @@ class BackdropParser {
 				$config[ 'data-titlecolor' ] = $value;
 			}  elseif ( $paramName == 'content-bgcolor' ) {
 				$config[ 'data-body-bgcolor' ] = $value;
+			}  elseif ( $paramName == 'content-textcolor' ) {
+				$config[ 'data-content-textcolor' ] = $value;
 			}
 		}
 		return Html::element( 'span', $config, null );
