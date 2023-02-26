@@ -13,18 +13,16 @@ use Mediawiki\MediawikiServices;
 class BackdropParser {
 
 	/**
-	 * Parser function handler for {{#backdrop: true | background=image.jpg | coverpage=true | hidecontrol=true
-	 * | titlecolor=white | pagelogo=logo.png | content-bgcolor=aliceblue }}
+	 * Parser function handler for {{#backdrop: background=Cityatnight.jpg | coverpage=true | hidecontrol=true |
+	 * titlecolor=white | pagelogo=BBC_logo.png | content-bgcolor=aliceblue | content-textcolor=green }}
 	 *
 	 * @param Parser $parser
 	 * @param string $value
 	 *
 	 * @return string HTML to insert in the page.
 	 */
-	public static function backDrop( $parser, $value ) {
+	public static function backDrop( $parser ) {
 		$params = func_get_args();
-		$params = array_splice( $params, 2 );
-		
 		$background = null;
 		$hidecontrol = null;
 		$pageLogo = null;
