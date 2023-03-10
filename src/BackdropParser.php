@@ -14,7 +14,8 @@ class BackdropParser {
 
 	/**
 	 * Parser function handler for {{#backdrop: background=Cityatnight.jpg | coverpage=true | hidecontrol=true |
-	 * titlecolor=white | pagelogo=BBC_logo.png | content-bgcolor=aliceblue | content-textcolor=green }}
+	 * titlecolor=white | pagelogo=BBC_logo.png | content-bgcolor=aliceblue | content-textcolor=green |
+	 * subtitle=1983-2010 }}
 	 *
 	 * @param Parser $parser
 	 * @param string $value
@@ -23,11 +24,6 @@ class BackdropParser {
 	 */
 	public static function backDrop( $parser ) {
 		$params = func_get_args();
-		$background = null;
-		$hidecontrol = null;
-		$pageLogo = null;
-		$coverPage = null;
-		$titleColor = null;
 		
 		$config = [ 'class' => 'backdrop' ];
 		
@@ -61,10 +57,12 @@ class BackdropParser {
 				$config[ 'data-coverpage' ] = true;
 			} elseif ( $paramName == 'titlecolor' ) {
 				$config[ 'data-titlecolor' ] = $value;
-			}  elseif ( $paramName == 'content-bgcolor' ) {
+			} elseif ( $paramName == 'content-bgcolor' ) {
 				$config[ 'data-body-bgcolor' ] = $value;
-			}  elseif ( $paramName == 'content-textcolor' ) {
+			} elseif ( $paramName == 'content-textcolor' ) {
 				$config[ 'data-content-textcolor' ] = $value;
+			} elseif ( $paramName == 'subtitle' ) {
+				$config[ 'data-subtitle' ] = $value;
 			}
 		}
 		return Html::element( 'span', $config, null );
